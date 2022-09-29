@@ -1,0 +1,27 @@
+DISCLAIMER: Comments were not included as TODO due to much of the code being changed
+Also, the thing is not finished as I have grown bored of doing it, I did a lot of refactoring and am looking forward to having an actual discussion on the problem with someone! From the current work, you can see where the solution would go to. All the best!
+
+QuizReponseModel
+Zašto je ordering naopako? Klasa treba da se čita kao knjiga
+Prvo polja, pa sve klase koje su child klase treba da budu na dnu, tako da od starta već znam kontekst u kojem se nalaze.
+
+QuizController:
+A couple of methods had reduntant QuizId as method parameter
+
+
+Declaring anything private in a class is reduntant as C# assigns the least available modifier to each member by default (private for inner class members)
+
+
+Returning Created method reduntant as Client can know where he sent the request and what he sent and respond accordingly
+
+
+Concerning Ids - not a good idea to use increment id due to potential future scalability
+better to use an Id server with snowflake algorithm and let the client fetch and send with request to server
+
+When updating - I return no NoContent due to a thing called Idempotency 
+
+
+System design question:
+If the client already gets the entire Quiz that contains the correct answer, then why is it needed for another trip to the server to attempt an answer when it can be done locally?
+
+
