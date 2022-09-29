@@ -8,6 +8,10 @@ using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using QuizService.Game;
+using QuizService.Infrastructure;
+using QuizService.Model.GameEngine;
+using QuizService.Model.Persistence;
 
 namespace QuizService;
 
@@ -25,6 +29,9 @@ public class Startup
     {
         services.AddMvc();
         services.AddSingleton(InitializeDb());
+        services.AddTransient<IQuizStore, QuizStore>();
+        services.AddTransient<IGameQuizStore, GameQuizStore>();
+        services.AddTransient<IGameEngine, GameEngine>();
         services.AddControllers();
     }
 

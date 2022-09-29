@@ -1,15 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizService", "QuizService\QuizService.csproj", "{6019F42B-A710-4B95-B67C-720C65DD65E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizService.Api", "QuizService\QuizService.Api.csproj", "{6019F42B-A710-4B95-B67C-720C65DD65E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizService.Tests", "QuizService.Tests\QuizService.Tests.csproj", "{A5603531-62AB-4578-8204-C67AF4BEF713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizService.UnitTests", "QuizService.Tests\QuizService.UnitTests.csproj", "{A5603531-62AB-4578-8204-C67AF4BEF713}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizClient", "QuizClient\QuizClient.csproj", "{9F6F16B1-B83D-45A9-9F75-675989A68EE6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizClient.Tests", "QuizClient.Tests\QuizClient.Tests.csproj", "{A1746465-9494-46CC-AB14-EB6AB15F446D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizService.Persistence", "QuizService.Infrastructure\QuizService.Persistence.csproj", "{C54E74FE-46DD-4981-8E2B-E87B8D401126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizService.Model", "QuizService.Model\QuizService.Model.csproj", "{A132C3B4-84D6-439D-83F5-CC2260D2C45A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizService.IntegrationTests", "QuizService.IntegrationTests\QuizService.IntegrationTests.csproj", "{C6B43961-3413-467F-AE88-FC34F96BA982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{5F7FE9D7-7C21-426A-9C22-0B869AB70E35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{9FD216F5-CA76-4166-9C49-CE2F22A5E653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizService.Game", "QuizService.Game\QuizService.Game.csproj", "{2C61D287-7234-4BD0-BC3B-126C3571B206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +45,35 @@ Global
 		{A1746465-9494-46CC-AB14-EB6AB15F446D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1746465-9494-46CC-AB14-EB6AB15F446D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1746465-9494-46CC-AB14-EB6AB15F446D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54E74FE-46DD-4981-8E2B-E87B8D401126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54E74FE-46DD-4981-8E2B-E87B8D401126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54E74FE-46DD-4981-8E2B-E87B8D401126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54E74FE-46DD-4981-8E2B-E87B8D401126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A132C3B4-84D6-439D-83F5-CC2260D2C45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A132C3B4-84D6-439D-83F5-CC2260D2C45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A132C3B4-84D6-439D-83F5-CC2260D2C45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A132C3B4-84D6-439D-83F5-CC2260D2C45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B43961-3413-467F-AE88-FC34F96BA982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B43961-3413-467F-AE88-FC34F96BA982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B43961-3413-467F-AE88-FC34F96BA982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B43961-3413-467F-AE88-FC34F96BA982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C61D287-7234-4BD0-BC3B-126C3571B206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C61D287-7234-4BD0-BC3B-126C3571B206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C61D287-7234-4BD0-BC3B-126C3571B206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C61D287-7234-4BD0-BC3B-126C3571B206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6019F42B-A710-4B95-B67C-720C65DD65E6} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
+		{A5603531-62AB-4578-8204-C67AF4BEF713} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
+		{9F6F16B1-B83D-45A9-9F75-675989A68EE6} = {9FD216F5-CA76-4166-9C49-CE2F22A5E653}
+		{A1746465-9494-46CC-AB14-EB6AB15F446D} = {9FD216F5-CA76-4166-9C49-CE2F22A5E653}
+		{C54E74FE-46DD-4981-8E2B-E87B8D401126} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
+		{A132C3B4-84D6-439D-83F5-CC2260D2C45A} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
+		{C6B43961-3413-467F-AE88-FC34F96BA982} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
+		{2C61D287-7234-4BD0-BC3B-126C3571B206} = {5F7FE9D7-7C21-426A-9C22-0B869AB70E35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6495E7A3-8CDA-4B14-B2E5-48FAC6CE36BB}

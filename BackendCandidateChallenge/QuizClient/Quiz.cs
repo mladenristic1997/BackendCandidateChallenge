@@ -1,6 +1,6 @@
 ﻿namespace QuizClient;
 
-public struct Quiz
+public record Quiz
 {
     public int Id;
     public string Title;

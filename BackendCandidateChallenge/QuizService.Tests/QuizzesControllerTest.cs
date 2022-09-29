@@ -11,6 +11,8 @@ using Xunit;
 
 namespace QuizService.Tests;
 
+//TODO
+//Put all NON INTEGRATION stuff here - stuff that can be tested in isolation - only the game engine here
 public class QuizzesControllerTest
 {
     const string QuizApiEndPoint = "/api/quizzes/";

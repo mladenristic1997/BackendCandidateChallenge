@@ -62,7 +62,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.GetQuizzesAsync(CancellationToken.None);
+        var result = await consumer.GetQuizMenuItemsAsync(CancellationToken.None);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.OK, result.StatusCode);
         Assert.NotEmpty(result.Value);
@@ -138,7 +138,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.PostQuizAsync(new Quiz { Title = "This is quiz 999" }, CancellationToken.None);
+        var result = await consumer.CreateQuizAsync(new Quiz { Title = "This is quiz 999" }, CancellationToken.None);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.Created, result.StatusCode);
         Assert.NotNull(result.Value);
@@ -173,7 +173,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.PostQuestionAsync(123, new QuizQuestion { Text = "This is a question" }, CancellationToken.None);
+        var result = await consumer.CreateQuestionAsync(123, new QuizQuestion { Text = "This is a question" }, CancellationToken.None);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.Created, result.StatusCode);
         Assert.NotNull(result.Value);
@@ -207,7 +207,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.PutQuestionAsync(123, 1, new QuizQuestion { Text = "Updated text" }, CancellationToken.None);
+        var result = await consumer.SetCorrectAnswerInQuestionAsync(1, new QuizQuestion { Text = "Updated text" }, CancellationToken.None);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.NoContent, result.StatusCode);
         Assert.NotEqual(Quiz.NotFound, result.Value);
@@ -246,7 +246,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.PostQuizAsync(new Quiz { Title = "This is quiz 999" }, CancellationToken.None);
+        var result = await consumer.CreateQuizAsync(new Quiz { Title = "This is quiz 999" }, CancellationToken.None);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.Created, result.StatusCode);
         Assert.NotNull(result.Value);
@@ -281,7 +281,7 @@ public class QuizClientTests : IClassFixture<QuizServiceApiPact>
 
         var consumer = new QuizClient(_mockProviderServiceBaseUri, Client);
 
-        var result = await consumer.PostQuizResponseAsync(new QuestionResponse(),123);
+        var result = await consumer.AttemptQuizResponseAsync(new QuestionResponse(),123);
         Assert.True(string.IsNullOrEmpty(result.ErrorMessage), result.ErrorMessage);
         Assert.Equal(HttpStatusCode.Created, result.StatusCode);
         Assert.NotNull(result.Value);

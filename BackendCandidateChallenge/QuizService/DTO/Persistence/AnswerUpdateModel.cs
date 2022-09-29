@@ -1,4 +1,4 @@
-namespace QuizService.Model;
+namespace QuizService.Api;
 
 public class AnswerUpdateModel
 {
